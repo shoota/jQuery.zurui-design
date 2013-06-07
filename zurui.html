@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script type="text/javascript" src="./js/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.zurui-design.js"></script>
+    <script type="text/javascript">
+        $(function(){
+
+            $("header")
+                    .zuruiGradient("#477936", -0.2)
+                    .zuruiText({bgType: "dark", opacity:0.4, pix:2});
+            $("h2").zuruiText({bgType: "dark", opacity:0.2, pix:1}).zuruiLine();
+
+            $(".example").zuruiRadius(2).zuruiBoss('deboss');
+            
+            $(".link > a")
+                .zuruiLine('top')
+                .zuruiLine('bottom')
+                .zuruiLine('left')
+                .zuruiLine('right')
+                .zuruiRadius(4)
+                .zuruiBoss('deboss');
+            
+            //demos----------------------------------------------------------------------
+            // zurui line
+            $(".line"+".default").zuruiLine();
+            $(".line"+".pos").zuruiLine("left");
+            $(".line"+".bd-opa").zuruiLine("top", {lineOpacity: "0.1"});
+            $(".line"+".right").zuruiLine("bottom", {lineOpacity: "1", boxOpacity:"0.1"});
+
+            // zurui text-shadow
+            $(".txshdw"+".default").zuruiText();
+            $(".txshdw"+".l-op").zuruiText({opacity: "0.4"});
+            $(".txshdw"+".dark").zuruiText({bgType: "dark"});
+            $(".txshdw"+".d-op").zuruiText({bgType: "dark", opacity: "0.5"});
+
+            // zurui gradation
+            $(".example"+".default").zuruiGradient("#e6e4ce");
+            $(".example"+".lighten").zuruiGradient("#e6e4ce", 0.1);
+            $(".example"+".darken").zuruiGradient("#e6e4ce", -0.1);
+            $('#begin-grad').on('change', function(e){
+                var val = $(this).val();
+                console.log(val);
+                $(".example"+".default").zuruiGradient(val);
+                $(".example"+".lighten").zuruiGradient(val, 0.1);
+                $(".example"+".darken").zuruiGradient(val, -0.1);
+            });
+
+            // zurui radius
+            $('.dyna-rad').zuruiRadius(4);
+            $("#ani-rad").on('click', function() {
+                $('.dyna-rad').zuruiRadius(4, 12, 'middle');
+            });
+            $(".usage" + ".default").zuruiRadius(2);
+
+            // zurui box
+            $("#inner").zuruiBox("inner").zuruiRadius(2);
+            $("#outer").zuruiBox("outer").zuruiRadius(2);
+            $("#deboss").zuruiBoss("deboss", {"border": "0.15", "shadow":"0.2", "highlight": "0.7"}).zuruiRadius(2);
+            $("#emboss").zuruiBoss("emboss", {"border": "0.1", "shadow":"0.2", "highlight": "0.4"}).zuruiRadius(2);
+
+        });
+    </script>
+
+
+    <title>zurui</title>
+</head>
+<body>
+
+<header>
+    <h1>jQuery.zurui-design</h1>
+</header>
+<p class="link"><a href="https://github.com/shoota/jQuery.zurui-design">github</a><p>
+
+<div class="content">
+    <h2>zurui line!</h2>
+    <div class="example">
+        <h3 class="line default">Default</h3>
+        <div class="usage">
+            Simple Usage as Default value(lineOpacity: "0.2",boxOpacity: "1").
+        <div class="code">
+            $(selector).zuruiLine();
+        </div>
+        </div>
+    </div>
+    <div class="example">
+        <h3 class="line pos">Set Position</h3>
+        <div class="usage">
+            Set Line Position. Select args in "top", "left", "right", or "bottom"(as default).
+        <div class="code">
+            $(selector).zuruiLine("left");
+        </div>
+        </div>
+    </div>
+    <div class="example">
+        <h3 class="line bd-opa">Border Opacity</h3>
+        <div class="usage">
+            Change border Opacity as second arg object. Compare to this and 'default'.
+        <div class="code">
+            $(selector).zuruiLine("top", { lineOpacity: "0.1" });
+        </div>
+        </div>
+    </div>
+    <div class="example" style="background-color: #333">
+        <h3 class="line right">Box Shadow Opacity</h3>
+        <div class="usage">
+            Change box-shadow Opacity as second arg object.
+        <div class="code">
+            $(selector).zuruiLine("bottom", { lineOpacity: "1", boxOpacity:"0.1" });
+        </div>
+        </div>
+    </div>
+</div><!-- content -->
+
+<div class="content">
+    <h2>zurui text-shadow!</h2>
+    <div class="example">
+        <h3 class="txshdw default">Default</h3>
+        <div class="usage">
+            Simple Usage as Default. When Backgroud color is lightness. Shadow Opacity is 1.0.
+            <div class="code">
+                $(selector).zuruiText();
+            </div>
+        </div>
+    </div>
+    <div class="example" style="background-color: #FFC300">
+        <h3 class="txshdw l-op">Set Shadow Opacity</h3>
+        <div class="usage">
+            Set Only Opacity.
+            <div class="code">
+                $(selector).zuruiText({opacity: "0.4"});
+            </div>
+        </div>
+    </div>
+    <div class="example" style="background-color: #333; color:#f4f4f4">
+        <h3 class="txshdw dark">Darkness background</h3>
+        <div class="usage">
+            When Backgroud color is darkness.
+            <div class="code">
+                $(selector)..zuruiText({bgType: "dark"});
+            </div>
+        </div>
+    </div>
+    <div class="example" style="background-color: #cf460b; color:#f4f4f4">
+        <h3 class="txshdw d-op">Darkness background and set Shadow Opacity</h3>
+        <div class="usage">
+            When Backgroun color is darkness and case of change Opacity.
+            <div class="code">
+                $(selector).zuruiText({bgType: "dark", opacity: "0.5"})
+            </div>
+        </div>
+    </div>
+</div><!-- content -->
+
+
+<div class="content">
+    <h2>zurui gradation!</h2>
+    Choose begin color: <input type="color" id="begin-grad" value="#e6e4ce">
+    <div class="example default">
+        <h3 class="grad">Default (Lighten)</h3>
+        <div class="usage">
+            Simple Usage as Default value (i.e. percent:0.2). To lighten.
+            <div class="code">
+                $(selector).zuruiGradient("#e6e4ce");
+            </div>
+        </div>
+    </div>
+
+    <div class="example lighten">
+        <h3 class="grad">Set Gradient value.</h3>
+        <div class="usage">
+            Generate Gradation To lighten with customize gradient val.
+            <div class="code">
+                $(selector).zuruiGradient("#e6e4ce", 0.1);
+            </div>
+        </div>
+    </div>
+
+    <div class="example darken">
+        <h3 class="grad">Darken</h3>
+        <div class="usage">
+            Generate Gradation To darken with customize gradient val.
+            <div class="code">
+                $(selector).zuruiGradient("#e6e4ce", -0.1);
+            </div>
+        </div>
+    </div>
+
+</div><!-- content -->
+<div class="content">
+    <h2>zurui radius! (Kado-Maru)</h2>
+    <div class="example">
+        <h3>Auto set bender prefix. (powerd by jQuery < v.1.8)</h3>
+        <div class="usage default rad-box">
+            Generate Gradation To darken with customize gradient val.
+            <div class="code">
+                $(selector).zuruiRadius(2);
+            </div>
+        </div>
+    </div>
+
+    <div class="example">
+        <h3>With Animate.</h3>
+        <p id="ani-rad">Click here.</p>
+        <div class="usage dyna-rad rad-box">
+            Draw radius with animate. zuruiRadius(endRad, beginRad, speed). speed can choose 'slow'/'fast'/'middle' or number val.<br>
+            <div class="code">
+                $(selector).zuruiRadius(4, 12, 'middle');
+            </div>
+        </div>
+
+    </div>
+</div><!-- content -->
+
+<div class="content">
+    <h2>zurui box!</h2>
+    <div class="example">
+        <h3>Inner Shadow Box.</h3>
+        <div class="usage box" id ="inner">
+            Draw inner shadow.
+            <div class="code">
+                $(selector).zuruiBox("inner");
+            </div>
+        </div>
+    </div>
+
+    <div class="example">
+        <h3>Outer shadow Box.</h3>
+        <div class="usage box" id = "outer">
+            Draw outer shadow.
+            <div class="code">
+                $(selector).zuruiBox("outer");
+            </div>
+        </div>
+    </div>
+
+    <div class="example">
+        <h3>Deboss Box.</h3>
+        <div class="usage box2" id = "deboss">
+            Draw Deboss box.
+            <div class="code">
+                $(selector).zuruiBoss("deboss", {"border": "0.15", "shadow":"0.2", "highlight": "0.7"});
+            </div>
+        </div>
+    </div>
+
+    <div class="example">
+        <h3>Emboss Box.</h3>
+        <div class="usage box2" id = "emboss">
+            Draw Emboss box.
+            <div class="code">
+                $(selector).zuruiBoss("emboss", {"border": "0.1", "shadow":"0.2", "highlight": "0.4"});
+            </div>
+        </div>
+    </div>
+</div><!-- content -->
+
+</body>
+</html>

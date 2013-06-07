@@ -1,0 +1,80 @@
+@import url(http://fonts.googleapis.com/css?family=Lato);
+body {
+    font-size: 12px;
+    font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #666;
+    background-image: url("white_wall.png");
+    line-height: 18px;
+    margin: 0;
+}
+header{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 15px;
+    color: rgb(240, 241, 247);
+}
+h2{
+    font-size: 28px;
+    color: #477936;
+    margin-left: -30px;
+    padding-bottom: 4px;
+    text-indent: 4px;
+}
+h3{
+    font-size: 18px;
+    padding: 10px;
+    margin-left: 3px;
+}
+.link{
+    position: absolute;
+    width: 100%;
+    text-align: right;
+}
+.link > a{
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-right: 60px;
+}
+.content{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 70px;
+}
+.example{
+    margin-bottom: 10px;
+    background-color: #f2f2f2;
+    padding-top: 4px;
+    padding-left: 6px;
+    padding-bottom: 10px;
+}
+.usage{
+    font-size: 14px;
+    padding-left: 6px
+}
+.box{
+    margin-right: 70px;
+    background-image: url("./texturetastic_gray.png");
+}
+.box2{
+    margin-right: 70px;
+    background-image: url("./fabric_of_squares_gray.png");
+}
+.rad-box{
+    max-width: 800px;
+    height: 45px;
+    background-color: #FFC300;
+    text-veritcal-align:center;
+}
+.code{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-left: 14px;
+    color: #999999;
+}
+
+#ani-rad{
+    color: blue;
+}
