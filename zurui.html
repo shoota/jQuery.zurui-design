@@ -50,7 +50,7 @@
         <p class="usage-head">.zuruiText(config)<p>
         <div class="method">
             <ul>
-                <li><p>opacity(optional)</p>
+                <li><p>config(optional)</p>
                     bgType: background color type. set "dark" when background-color is dark color.<br>
                     opacity: shadow opacity. set between 0.1 and 1.0 (default: 1.0).
                 </li>
@@ -74,17 +74,31 @@
 
 <div class="content">
     <h2>zurui gradation!</h2>
+    <div class="usage">
+        <p class="usage-head">.zuruiGradient(hexColor, percent)<p>
+        <div class="method">
+            <ul>
+                <li><p>hexColor(required)</p>
+                    begin color of gradient.
+                </li>
+                <li><p>percent(optional)</p>
+                    color gradient ratio (default: 20).
+                </li>
+            </ul>
+        </div>
+    </div>
+
     Choose begin color: <input type="color" id="begin-grad" value="#e6e4ce">
     <div class="example default">
-        <h3 class="grad">$(selector).zuruiGradient(hexColor);</h3>
+        <h3 class="grad">$(selector).zuruiGradient("#e6e4ce");</h3>
     </div>
 
     <div class="example lighten">
-        <h3 class="grad">$(selector).zuruiGradient(hexColor, 0.1);</h3>
+        <h3 class="grad">$(selector).zuruiGradient("#e6e4ce", 50);</h3>
     </div>
 
     <div class="example darken">
-        <h3 class="grad">$(selector).zuruiGradient("#e6e4ce", -0.1);</h3>
+        <h3 class="grad">$(selector).zuruiGradient("#e6e4ce", -50);</h3>
     </div>
 </div><!-- content -->
 
@@ -120,7 +134,10 @@
             Outer shadow Box.
         </div>
     </div>
+</div><!-- content -->
 
+<div class="content">
+    <h2>zurui boss!</h2>
     <div class="example">
         <h3>$(selector).zuruiBoss("deboss", {"border": "0.15", "shadow":"0.2", "highlight": "0.7"});</h3>
         <div class="sample box2" id = "deboss">
