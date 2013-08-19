@@ -8,7 +8,7 @@
         $(function(){
 
             $("header")
-                    .zuruiGradient("#477936", -0.2)
+                    .zuruiGradient("#477936", -20)
                     .zuruiText({bgType: "dark", opacity:0.4, pix:2});
             $("h2").zuruiText({bgType: "dark", opacity:0.2, pix:1}).zuruiLine();
 
@@ -37,14 +37,14 @@
 
             // zurui gradation
             $(".example"+".default").zuruiGradient("#e6e4ce");
-            $(".example"+".lighten").zuruiGradient("#e6e4ce", 0.1);
-            $(".example"+".darken").zuruiGradient("#e6e4ce", -0.1);
+            $(".example"+".lighten").zuruiGradient("#e6e4ce", 10);
+            $(".example"+".darken").zuruiGradient("#e6e4ce", -20);
             $('#begin-grad').on('change', function(e){
                 var val = $(this).val();
                 console.log(val);
                 $(".example"+".default").zuruiGradient(val);
-                $(".example"+".lighten").zuruiGradient(val, 0.1);
-                $(".example"+".darken").zuruiGradient(val, -0.1);
+                $(".example"+".lighten").zuruiGradient(val, 10);
+                $(".example"+".darken").zuruiGradient(val, -20);
             });
 
             // zurui radius
@@ -71,7 +71,7 @@
 <header>
     <h1>jQuery.zurui-design</h1>
 </header>
-<p class="link"><a href="https://github.com/shoota/jQuery.zurui-design">github</a><p>
+<p class="link"><a href="https://github.com/shoota/jQuery.zurui-design" target="_blank">github</a><p>
 
 <div class="content">
     <h2>zurui line!</h2>

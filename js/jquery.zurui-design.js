@@ -66,12 +66,14 @@
     $.fn.zuruiGradient = function(color, percent){
         var target = $(this);
         // default value.
-        percent = percent || 0.2;
+        percent = percent || 20;
 
         var prefix = ['-webkit-', '-moz-', '-o-', '-ms-', ''];
 
         var endColor = $.dimming(color, percent);
-        var ln ='linear-gradient('+endColor+' 0%, '+color +' 100%)';
+        console.log(color);
+        console.log(endColor);
+        var ln ='linear-gradient('+color +' 0%, '+endColor+' 100%)';
 
 
         target.css("background-color", color);
@@ -165,18 +167,39 @@
      * Fake method lighten() and darken() in SASS.
      */
     $.dimming = function(hex, percent) {
-        hex = String(hex).replace(/[^0-9a-f]/gi, '');
-        if (hex.length < 6) {
-            hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
-        }
-        percent = percent || 0;
-        var rgb = "#", c, i;
-        for (i = 0; i < 3; i++) {
-            c = parseInt(hex.substr(i*2,2), 16);
-            c = Math.round(Math.min(Math.max(0, c + (c * percent)), 255)).toString(16);
-            rgb += ("00"+c).substr(c.length);
-        }
-        return rgb;
+        var hasHash=(hex[0]=='#');
+        if(hasHash) hex=hex.slice(1);
+        var num=parseInt(hex, 16);
+
+        // Red
+        var R = (num>>16)+percent;
+        if(R>255) R=255;
+        else if(R<0)R=0;
+
+        // Blue
+        var B = ((num>>8) & 0x00FF)+percent;
+        if(B>255)B=255;
+        else if(B<0)B=0;
+
+        // Green
+        var G = (num & 0x0000FF)+percent;
+        if(G>255)G=255;
+        else if(G<0)G=0;
+        return '#'+(G|(B<<8)|(R<<16)).toString(16);
+
+
+//        hex = String(hex).replace(/[^0-9a-f]/gi, '');
+//        if (hex.length < 6) {
+//            hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+//        }
+//        percent = percent || 0;
+//        var rgb = "#", c, i;
+//        for (i = 0; i < 3; i++) {
+//            c = parseInt(hex.substr(i*2,2), 16);
+//            c = Math.round(Math.min(Math.max(0, c + (c * percent)), 255)).toString(16);
+//            rgb += ("00"+c).substr(c.length);
+//        }
+//        return rgb;
     }
 
 })(jQuery);
