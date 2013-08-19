@@ -27,13 +27,13 @@ $(function(){
 
     // zurui gradation
     $(".example"+".default").zuruiGradient("#e6e4ce");
-    $(".example"+".lighten").zuruiGradient("#e6e4ce", 10);
-    $(".example"+".darken").zuruiGradient("#e6e4ce", -20);
+    $(".example"+".lighten").zuruiGradient("#e6e4ce", 50);
+    $(".example"+".darken").zuruiGradient("#e6e4ce", -50);
     $('#begin-grad').on('change', function(e){
         var val = $(this).val();
         $(".example"+".default").zuruiGradient(val);
-        $(".example"+".lighten").zuruiGradient(val, 10);
-        $(".example"+".darken").zuruiGradient(val, -20);
+        $(".example"+".lighten").zuruiGradient(val, 50);
+        $(".example"+".darken").zuruiGradient(val, -50);
     });
 
     // zurui radius
