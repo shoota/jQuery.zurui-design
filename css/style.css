@@ -1,4 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Lato);
+@import url(http://fonts.googleapis.com/css?family=Amaranth);
+
 body {
     font-size: 12px;
     font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -9,23 +11,28 @@ body {
 }
 header{
     font-size: 25px;
+    font-family: 'Amaranth', 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: bold;
     text-align: center;
     margin-bottom: 10px;
     padding: 15px;
-    color: rgb(240, 241, 247);
+    color: rgb(228, 229, 235);
 }
 h2{
-    font-size: 28px;
+    font-size: 30px;
+    font-family: 'Amaranth', 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #477936;
     margin-left: -30px;
-    padding-bottom: 4px;
+    padding-bottom: 6px;
     text-indent: 4px;
 }
 h3{
-    font-size: 18px;
+    font-size: 16px;
     padding: 10px;
     margin-left: 3px;
+}
+p{
+    margin: 0 0 0 0;
 }
 .link{
     position: absolute;
@@ -45,15 +52,30 @@ h3{
     margin-bottom: 70px;
 }
 .example{
-    margin-bottom: 10px;
     background-color: #f2f2f2;
     padding-top: 4px;
     padding-left: 6px;
     padding-bottom: 10px;
+    margin-top: 5px;
+    margin-left: 5%;
+    margin-bottom: auto;
 }
 .usage{
     font-size: 14px;
-    padding-left: 6px
+}
+.usage-head{
+    font-weight: bold;
+    font-size: 16px
+}
+.method{
+    margin-left: 10px;
+}
+.sample{
+    max-width: 800px;
+    font-size: 14px;
+    padding-left: 20px;
+    line-height: 45px;
+    margin-left: 5%;
 }
 .box{
     margin-right: 70px;
@@ -64,16 +86,10 @@ h3{
     background-image: url("./fabric_of_squares_gray.png");
 }
 .rad-box{
-    max-width: 800px;
     height: 45px;
     background-color: #FFC300;
-    text-veritcal-align:center;
 }
-.code{
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    margin-left: 14px;
-    color: #999999;
-}
+
 
 #ani-rad{
     color: blue;
