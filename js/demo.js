@@ -21,7 +21,7 @@ $(function(){
 
     // zurui text-shadow
     $(".txshdw"+".default").zuruiText();
-    $(".txshdw"+".l-op").zuruiText({opacity: "0.4"});
+    $(".txshdw"+".l-op").zuruiText({opacity: "0.5"});
     $(".txshdw"+".dark").zuruiText({bgType: "dark"});
     $(".txshdw"+".d-op").zuruiText({bgType: "dark", opacity: "0.5"});
 

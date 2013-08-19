@@ -4,14 +4,14 @@
         // default style
         var defaults = {
             lineOpacity: "0.2",
-            boxOpacity: "1"
+            shadowOpacity: "1"
         };
         var option = $.extend(defaults, config);
         position = position || "bottom";
 
         // CSS Building
         var bdr = "border-"+position;
-        var boxrgba = "rgba(255,255,255, "+option.boxOpacity+ ")";
+        var boxrgba = "rgba(255,255,255, "+option.shadowOpacity+ ")";
         var bsSize=" 0 1px 0";
         switch (position){
             case "top":
@@ -75,13 +75,10 @@
         console.log(endColor);
         var ln ='linear-gradient('+color +' 0%, '+endColor+' 100%)';
 
-
         target.css("background-color", color);
         prefix.forEach(function(prf){
             target.css("background-image", prf+ln);
         });
-
-
         // return jQuery obj.
         return target;
     };
@@ -150,7 +147,7 @@
         };
         var tpHash = {
             "deboss": [' -1px 1px 2px inset,', ' -1px 1px 0'],
-            "emboss": [' -1px 1px 0,',         ' -1px -1px 0 inset']
+            "emboss": [' -1px 1px 0,',' -1px -1px 0 inset']
         };
 
         // build style
@@ -186,20 +183,6 @@
         if(G>255)G=255;
         else if(G<0)G=0;
         return '#'+(G|(B<<8)|(R<<16)).toString(16);
-
-
-//        hex = String(hex).replace(/[^0-9a-f]/gi, '');
-//        if (hex.length < 6) {
-//            hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
-//        }
-//        percent = percent || 0;
-//        var rgb = "#", c, i;
-//        for (i = 0; i < 3; i++) {
-//            c = parseInt(hex.substr(i*2,2), 16);
-//            c = Math.round(Math.min(Math.max(0, c + (c * percent)), 255)).toString(16);
-//            rgb += ("00"+c).substr(c.length);
-//        }
-//        return rgb;
     }
 
 })(jQuery);
