@@ -140,6 +140,8 @@
     $.fn.zuruiBoss = function(type, config){
         var target = $(this);
 
+        type = type || "deboss";
+
         var defaults = {
             "border": "0.1",
             "shadow":"0.1",

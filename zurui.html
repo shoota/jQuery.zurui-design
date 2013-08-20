@@ -16,6 +16,7 @@
 
 <div class="content">
     <h2>zurui line!</h2>
+    <p class=description>Drawing "awesome line", that appears to be a dig stacked the line of black and white.</p>
     <div class="usage">
         <p class="usage-head">.zuruiLine(position, opacity)<p>
         <div class="method">
@@ -46,6 +47,7 @@
 
 <div class="content">
     <h2>zurui text-shadow!</h2>
+    <p class=description>Decorate text that it is carved a seal.</p>
     <div class="usage">
         <p class="usage-head">.zuruiText(config)<p>
         <div class="method">
@@ -74,6 +76,7 @@
 
 <div class="content">
     <h2>zurui gradation!</h2>
+    <p class=description>Make vertical gradation easy on the eyes.</p>
     <div class="usage">
         <p class="usage-head">.zuruiGradient(hexColor, percent)<p>
         <div class="method">
@@ -82,38 +85,51 @@
                     begin color of gradient.
                 </li>
                 <li><p>percent(optional)</p>
-                    color gradient ratio (default: 20).
+                    gradient ratio[%] (default: 20%).
                 </li>
             </ul>
         </div>
     </div>
-
-    Choose begin color: <input type="color" id="begin-grad" value="#e6e4ce">
+    <span class="demo-input"><input type="color" id="begin-grad" value="#e6e4ce"> : Choose begin color</span>
     <div class="example default">
         <h3 class="grad">$(selector).zuruiGradient("#e6e4ce");</h3>
     </div>
-
     <div class="example lighten">
-        <h3 class="grad">$(selector).zuruiGradient("#e6e4ce", 50);</h3>
+        <h3 class="grad">$(selector).zuruiGradient("#e6e4ce", 30);</h3>
     </div>
-
     <div class="example darken">
-        <h3 class="grad">$(selector).zuruiGradient("#e6e4ce", -50);</h3>
+        <h3 class="grad">$(selector).zuruiGradient("#e6e4ce", -30);</h3>
     </div>
 </div><!-- content -->
 
 <div class="content">
     <h2>zurui radius! (Kado-Maru)</h2>
+    <p class=description>Set Radius to Box without/with simply animation.</p>
+    <div class="usage">
+        <p class="usage-head">.zuruiRadius(RAD, start, speed)<p>
+        <div class="method">
+            <ul>
+                <li><p>RAD(optional)</p>
+                    Set radius[px] (default: 2[px]).
+                </li>
+                <li><p>start(optional)</p>
+                    If use animation, begin radius with this[px](default: RAD * 3 [px]).
+                </li>
+                <li><p>speed(optional)</p>
+                    If use animation, change rad[px]/sec. Set "slow" or "middle" or "fast", or Int value.
+                </li>
+            </ul>
+        </div>
+    </div>
     <div class="example">
-        <h3>$(selector).zuruiRadius(2)</h3>
-        <div class="sample default rad-box">
+        <h3>$(selector).zuruiRadius()</h3>
+        <div class="sample rad-box">
             Auto set bender prefix. (powerd by jQuery v.1.8 or later)
         </div>
     </div>
-
     <div class="example">
         <h3>$(selector).zuruiRadius(4, 12, 'middle')</h3>
-        <div class="sample dyna-rad rad-box">
+        <div class="sample rad-box dyna-rad">
             With Animation. <span id="ani-rad">Click me.</span>
         </div>
     </div>
@@ -121,13 +137,29 @@
 
 <div class="content">
     <h2>zurui box!</h2>
+    <p class=description>Awesome box with inner/outer shadow. Recommend to use with texture background (try hover on each box)</p>
+    <div class="usage">
+        <p class="usage-head">.zuruiBox(type)<p>
+        <div class="method">
+            <ul>
+                <li><p>type(optional)</p>
+                    Select "inner"(as deafult) or "outer".
+                </li>
+            </ul>
+        </div>
+    </div>
     <div class="example">
-        <h3>$(selector).zuruiBox("inner");</h3>
+        <h3>not use (negative control)</h3>
+        <div class="sample box" id ="none">
+            hover me.
+        </div>
+    </div>
+    <div class="example">
+        <h3>$(selector).zuruiBox();</h3>
         <div class="sample box" id ="inner">
             Inner Shadow Box.
         </div>
     </div>
-
     <div class="example">
         <h3>$(selector).zuruiBox("outer");</h3>
         <div class="sample box" id = "outer">
@@ -138,6 +170,22 @@
 
 <div class="content">
     <h2>zurui boss!</h2>
+    <p class=description>Awesome box with deboss/emboss effect. It is also good to use with texture background (try hover on each box)</p>
+    <div class="usage">
+        <p class="usage-head">.zuruiBoss(type, config)<p>
+        <div class="method">
+            <ul>
+                <li><p>type(optional)</p>
+                    Select "deboss"(as deafult) or "emboss".
+                </li>
+                <li><p>config(optional)</p>
+                    border: solid line opacity. set between 0.1 and 1.0 (default: 0.1).<br>
+                    shadow: line shadow opacity. set between 0.1 and 1.0 (default: 0.1).<br>
+                    highlight: line highlight opacity. set between 0.1 and 1.0 (default: 1.0).
+                </li>
+            </ul>
+        </div>
+    </div>
     <div class="example">
         <h3>$(selector).zuruiBoss("deboss", {"border": "0.15", "shadow":"0.2", "highlight": "0.7"});</h3>
         <div class="sample box2" id = "deboss">
@@ -152,6 +200,13 @@
         </div>
     </div>
 </div><!-- content -->
+
+<!--
+<div id="download">
+    <a>Development ver. (KB)</a>
+    <a>Production ver. (KB)</a>
+</div>
+-->
 
 </body>
 </html>

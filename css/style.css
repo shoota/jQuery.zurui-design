@@ -2,7 +2,7 @@
 @import url(http://fonts.googleapis.com/css?family=Amaranth);
 
 body {
-    font-size: 12px;
+    font-size: 13px;
     font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #666;
     background-image: url("white_wall.png");
@@ -25,6 +25,7 @@ h2{
     margin-left: -30px;
     padding-bottom: 6px;
     text-indent: 4px;
+    margin-bottom: 8px;
 }
 h3{
     font-size: 16px;
@@ -77,19 +78,29 @@ p{
     line-height: 45px;
     margin-left: 5%;
 }
-.box{
-    margin-right: 70px;
+.box:hover{
     background-image: url("./texturetastic_gray.png");
 }
-.box2{
-    margin-right: 70px;
+.box2:hover{
     background-image: url("./fabric_of_squares_gray.png");
 }
 .rad-box{
     height: 45px;
     background-color: #FFC300;
 }
+.description {
+    color: #8D0D0D;
+    text-align: right;
+    margin-top: -3px;
+}
+.demo-input{
+    margin-left: 5%;
+}
 
+#begin-grad{
+    width: 25px;
+    height: 18px;
+}
 
 #ani-rad{
     color: blue;
